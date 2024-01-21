@@ -22,6 +22,33 @@ int PrintSize (string msg)
     return Convert.ToInt32(Console.ReadLine());
 }
 
+string[] NewArray(string[] array)
+{
+    int n = 0;
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i].Length <= 3)
+        {
+            n++;
+        }
+    }
+
+    string[] array_2 = new string[n];
+    int j = 0;
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i].Length <= 3)
+        {
+            array_2[j] = array[i];
+            j++;
+        }
+    }
+    return array_2;
+}
+
 int N = PrintSize("Введите размер массива: ");
 string[] MyArray = GenerateArray(N);
-Console.Write(string.Join(", ", MyArray));
+Console.Write($"[{string.Join(", ", MyArray)}]");
+string[] MyArray_2 = NewArray(MyArray);
+Console.WriteLine();
+Console.Write($"[{string.Join(", ", MyArray_2)}]");
