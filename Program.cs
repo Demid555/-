@@ -6,3 +6,22 @@
 
 // Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам. Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
+string[] GenerateArray(int size)
+{
+    string[] array = new string[size];
+    for(int i = 0; i < size; i++)
+    {
+        array[i] = Console.ReadLine();
+    }
+    return array;
+}
+
+int PrintSize (string msg)
+{
+    Console.Write(msg);
+    return Convert.ToInt32(Console.ReadLine());
+}
+
+int N = PrintSize("Введите размер массива: ");
+string[] MyArray = GenerateArray(N);
+Console.Write(string.Join(", ", MyArray));
